@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cloud Security Posture and Attack-Path Analysis — a controlled academic cloud-security lab for posture assessment, attack-path analysis, remediation, policy-as-code, and monitoring." />
+  <title>CloudShield Lab — Cloud Security Posture & Attack-Path Analysis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+
+  <header class="navbar" id="top">
+    <a class="brand" href="#top" aria-label="CloudShield Lab home">
+      <span class="brand-mark"><span></span><span></span><span></span></span>
+      <span>CloudShield<span class="brand-dot">.</span>Lab</span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#platform">Platform</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#attack-path">Attack Path</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#tools">Tools</a>
+    </nav>
+
+    <a class="nav-cta" href="#launch">Launch Lab <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero section-pad">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="pulse"></span> CONTROLLED CLOUD SECURITY LAB</div>
+        <h1>Find the weakness.<br><span>Trace the path.</span><br>Fix the root cause.</h1>
+        <p class="hero-text">
+          Cloud Security Posture &amp; Attack-Path Analysis combines Infrastructure as Code,
+          posture assessment, attack-path reasoning, policy-as-code and cloud audit visibility
+          in one reproducible academic security lab.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#launch">Launch Security Lab <span>→</span></a>
+          <a class="btn btn-ghost" href="#architecture">View Architecture</a>
+        </div>
+        <div class="hero-note">
+          <span>✓</span> Authorized resources only &nbsp;•&nbsp;
+          Synthetic credentials &nbsp;•&nbsp; Non-destructive testing
+        </div>
+      </div>
+
+      <div class="hero-dashboard reveal">
+        <div class="window-bar">
+          <div class="window-dots"><i></i><i></i><i></i></div>
+          <span>security-posture / overview</span>
+          <span class="live"><b></b> LAB ONLINE</span>
+        </div>
+
+        <div class="dash-head">
+          <div>
+            <small>PROJECT POSTURE</small>
+            <h3>Cloud Security Overview</h3>
+          </div>
+          <span class="scan-badge">SCAN COMPLETE</span>
+        </div>
+
+        <div class="score-row">
+          <div class="score-ring"><strong>LAB</strong><small>POSTURE</small></div>
+          <div class="score-info">
+            <div class="mini-label">ASSESSMENT SOURCES</div>
+            <div class="source-pills">
+              <span>Prowler</span><span>ScoutSuite</span><span>Checkov</span>
+            </div>
+            <div class="progress-label"><span>Assessment coverage</span><b>Ready</b></div>
+            <div class="progress"><span></span></div>
+          </div>
+        </div>
+
+        <div class="finding-grid">
+          <div class="finding critical"><span class="finding-icon">!</span><div><b>IAM</b><small>Over-permissive role</small></div><em>Review</em></div>
+          <div class="finding warning"><span class="finding-icon">◈</span><div><b>Storage</b><small>Broad access</small></div><em>Review</em></div>
+          <div class="finding warning"><span class="finding-icon">⌁</span><div><b>Network</b><small>Weak rule</small></div><em>Review</em></div>
+          <div class="finding info"><span class="finding-icon">⌁</span><div><b>Logging</b><small>Audit visibility</small></div><em>Check</em></div>
+        </div>
+
+        <div class="path-preview">
+          <div class="mini-label">ATTACK-PATH GRAPH</div>
+          <div class="path-line">
+            <span class="node danger">Credential</span><i>→</i>
+            <span class="node">IAM</span><i>→</i>
+            <span class="node">Storage</span><i>→</i>
+            <span class="node target">Workload</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <span>BUILT AROUND</span>
+      <b>Terraform</b><i>•</i><b>Prowler</b><i>•</i><b>ScoutSuite</b><i>•</i><b>Checkov</b><i>•</i><b>CloudTrail</b>
+    </section>
+
+    <section class="section-pad section" id="platform">
+      <div class="section-heading reveal">
+        <div class="eyebrow">WHY THIS PROJECT</div>
+        <h2>Cloud weaknesses rarely<br><span>exist in isolation.</span></h2>
+        <p>Our lab connects individual configuration findings to the identity, resource, network and logging relationships that can form meaningful attack paths.</p>
+      </div>
+
+      <div class="problem-grid">
+        <article class="feature-card reveal">
+          <div class="card-number">01</div><div class="icon-box">⌘</div>
+          <h3>Identity Risk</h3><p>Identify roles and permissions that are broader than the workload needs.</p><div class="tag">IAM / LEAST PRIVILEGE</div>
+        </article>
+        <article class="feature-card reveal">
+          <div class="card-number">02</div><div class="icon-box">▣</div>
+          <h3>Exposed Storage</h3><p>Detect overly broad storage access and connect it to reachable identities and workloads.</p><div class="tag">STORAGE / ACCESS</div>
+        </article>
+        <article class="feature-card reveal">
+          <div class="card-number">03</div><div class="icon-box">⌁</div>
+          <h3>Network Exposure</h3><p>Review firewall and security-group rules that create unnecessary reachability.</p><div class="tag">NETWORK / REACHABILITY</div>
+        </article>
+        <article class="feature-card reveal">
+          <div class="card-number">04</div><div class="icon-box">◇</div>
+          <h3>Credential Risk</h3><p>Use synthetic test credentials to demonstrate controlled identity exposure safely.</p><div class="tag">SECRETS / SYNTHETIC</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="dark-section section-pad" id="workflow">
+      <div class="section-heading centered reveal">
+        <div class="eyebrow">CLOSED-LOOP SECURITY</div>
+        <h2>From infrastructure code<br>to <span>verified remediation.</span></h2>
+        <p>Define, assess, analyze, remediate and prevent — then reassess the environment using the same controlled process.</p>
+      </div>
+
+      <div class="workflow">
+        <div class="step reveal"><span>01</span><div class="step-icon">⌘</div><h3>Define</h3><p>Terraform</p></div>
+        <div class="connector"></div>
+        <div class="step reveal"><span>02</span><div class="step-icon">◇</div><h3>Deploy</h3><p>Cloud Lab</p></div>
+        <div class="connector"></div>
+        <div class="step reveal"><span>03</span><div class="step-icon">◎</div><h3>Assess</h3><p>CSPM + IaC</p></div>
+        <div class="connector"></div>
+        <div class="step reveal"><span>04</span><div class="step-icon">↗</div><h3>Analyze</h3><p>Attack Paths</p></div>
+        <div class="connector"></div>
+        <div class="step reveal"><span>05</span><div class="step-icon">✓</div><h3>Remediate</h3><p>Secure IaC</p></div>
+        <div class="connector"></div>
+        <div class="step reveal"><span>06</span><div class="step-icon">◉</div><h3>Prevent</h3><p>Guardrails</p></div>
+        <div class="connector"></div>
+        <div class="step reveal"><span>07</span><div class="step-icon">⌁</div><h3>Monitor</h3><p>Audit + Alerts</p></div>
+      </div>
+    </section>
+
+    <section class="section-pad section" id="attack-path">
+      <div class="attack-layout">
+        <div class="section-heading reveal">
+          <div class="eyebrow">CORE ANALYSIS</div>
+          <h2>See how small findings<br>can <span>connect into a path.</span></h2>
+          <p>
+            The project does not treat scanner findings as isolated checkboxes.
+            Each finding is mapped to prerequisites, permissions, reachable resources,
+            trust relationships and potential impact.
+          </p>
+          <a class="text-link" href="#architecture">Explore the architecture →</a>
+        </div>
+
+        <div class="attack-graph reveal">
+          <div class="graph-header"><span>ILLUSTRATIVE ATTACK-PATH</span><b>DEFENSIVE ANALYSIS</b></div>
+          <div class="graph">
+            <div class="graph-node danger"><small>INITIAL ACCESS</small><strong>Leaked<br>Credential</strong></div>
+            <div class="graph-arrow">→</div>
+            <div class="graph-node"><small>IDENTITY</small><strong>Over-Permissive<br>IAM</strong></div>
+            <div class="graph-arrow">→</div>
+            <div class="graph-node"><small>RESOURCE</small><strong>Read / Write<br>Storage</strong></div>
+            <div class="graph-arrow">→</div>
+            <div class="graph-node"><small>NETWORK</small><strong>Network<br>Exposure</strong></div>
+            <div class="graph-arrow">→</div>
+            <div class="graph-node target"><small>IMPACT</small><strong>Sensitive<br>Workload</strong></div>
+          </div>
+          <div class="graph-foot"><span>●</span> Every relationship is supported by configuration or log evidence.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad architecture-section" id="architecture">
+      <div class="section-heading centered reveal">
+        <div class="eyebrow">REFERENCE ARCHITECTURE</div>
+        <h2>A small, reproducible<br><span>multi-account security lab.</span></h2>
+        <p>Designed to demonstrate the security concepts without creating unnecessary cloud spend.</p>
+      </div>
+
+      <div class="architecture-board reveal">
+        <div class="arch-column developer">
+          <div class="arch-label">PROVISION</div>
+          <div class="arch-card main"><span class="arch-icon">⌘</span><strong>Developer</strong><small>Terraform</small></div>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-column">
+          <div class="arch-label">CLOUD BOUNDARIES</div>
+          <div class="arch-card"><strong>Account A</strong><small>Identity / IAM</small></div>
+          <div class="arch-card"><strong>Account B</strong><small>Workloads</small></div>
+          <div class="arch-card"><strong>Account C</strong><small>Security / Logging</small></div>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-column">
+          <div class="arch-label">ASSESSMENT</div>
+          <div class="arch-card tool"><strong>Prowler</strong><small>Posture checks</small></div>
+          <div class="arch-card tool"><strong>ScoutSuite</strong><small>Cloud review</small></div>
+          <div class="arch-card tool"><strong>Checkov</strong><small>IaC security</small></div>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-column">
+          <div class="arch-label">VISIBILITY</div>
+          <div class="arch-card log"><strong>CloudTrail</strong><small>Audit trail</small></div>
+          <div class="arch-card log"><strong>Alerts</strong><small>Selected signals</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad section tools-section" id="tools">
+      <div class="section-heading reveal">
+        <div class="eyebrow">SECURITY TOOLCHAIN</div>
+        <h2>Multiple evidence sources.<br><span>One security picture.</span></h2>
+        <p>The documentation intentionally combines tools instead of claiming that one product provides complete cloud security.</p>
+      </div>
+
+      <div class="tools-grid">
+        <div class="tool-card reveal"><span class="tool-logo">TF</span><div><h3>Terraform</h3><p>Repeatable infrastructure provisioning and code-based remediation.</p></div></div>
+        <div class="tool-card reveal"><span class="tool-logo">P</span><div><h3>Prowler</h3><p>Cloud security posture and compliance-oriented checks.</p></div></div>
+        <div class="tool-card reveal"><span class="tool-logo">S</span><div><h3>ScoutSuite</h3><p>Independent cloud configuration assessment.</p></div></div>
+        <div class="tool-card reveal"><span class="tool-logo">C</span><div><h3>Checkov</h3><p>Detect insecure Infrastructure as Code patterns before deployment.</p></div></div>
+        <div class="tool-card reveal"><span class="tool-logo">CT</span><div><h3>CloudTrail</h3><p>Audit evidence for relevant cloud API activity.</p></div></div>
+        <div class="tool-card reveal"><span class="tool-logo">PX</span><div><h3>Pacu</h3><p>Controlled security validation inside the authorized project lab.</p></div></div>
+      </div>
+    </section>
+
+    <section class="dark-section section-pad results-section">
+      <div class="section-heading centered reveal">
+        <div class="eyebrow">MEASURE THE CHANGE</div>
+        <h2>Security is a process,<br><span>not a one-time scan.</span></h2>
+        <p>Run the same assessment before and after remediation and document the evidence.</p>
+      </div>
+      <div class="metrics reveal">
+        <div><strong>5</strong><span>Misconfiguration classes</span></div>
+        <div><strong>6</strong><span>Core security tools</span></div>
+        <div><strong>7</strong><span>Workflow stages</span></div>
+        <div><strong>4</strong><span>Team members</span></div>
+      </div>
+      <div class="before-after reveal">
+        <div class="ba-card before"><span>BASELINE</span><h3>Identify findings</h3><p>Capture posture, IaC, exposure, IAM and logging evidence.</p><div class="ba-line"></div><small>Prowler · ScoutSuite · Checkov · Manual Review</small></div>
+        <div class="ba-center">→</div>
+        <div class="ba-card after"><span>POST-REMEDIATION</span><h3>Verify improvements</h3><p>Re-run assessments and compare the same project-defined measurements.</p><div class="ba-line"></div><small>Secure Terraform · Guardrails · Audit Logs · Alerts</small></div>
+      </div>
+    </section>
+
+    <section class="section-pad section" id="launch">
+      <div class="launch-card reveal">
+        <div>
+          <div class="eyebrow">ACADEMIC CYBERSECURITY PROTOTYPE</div>
+          <h2>Build it. Break it safely.<br><span>Fix it in code.</span></h2>
+          <p>Explore the controlled cloud lab and demonstrate how posture assessment, attack-path reasoning and preventive controls work together.</p>
+        </div>
+        <div class="launch-actions">
+          <a class="btn btn-primary" id="launchButton" href="#top">Launch Security Lab <span>↗</span></a>
+          <a class="btn btn-dark" href="#tools">Explore Toolchain</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-main">
+      <div>
+        <a class="brand" href="#top"><span class="brand-mark"><span></span><span></span><span></span></span><span>CloudShield<span class="brand-dot">.</span>Lab</span></a>
+        <p>Cloud Security Posture &amp; Attack-Path Analysis</p>
+      </div>
+      <div class="footer-links">
+        <a href="#platform">Platform</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#attack-path">Attack Path</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#tools">Tools</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Academic prototype · Controlled and authorized resources only</span>
+      <span>© <span id="year"></span> CloudShield Lab</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
