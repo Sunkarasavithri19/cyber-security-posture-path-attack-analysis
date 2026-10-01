@@ -1,7 +1,7 @@
 const CONFIG = {
   // Replace this with your deployed Streamlit/dashboard URL when ready.
   // Example: "https://your-project.streamlit.app"
-  launchUrl: "#workflow"
+ 
 };
 
 document.addEventListener("DOMContentLoaded", () => {
